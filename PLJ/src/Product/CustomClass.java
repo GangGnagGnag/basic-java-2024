@@ -4,7 +4,7 @@ public class CustomClass {
     int id;            // 회원 번호
     String name;        // 회원 이름
     int age;            //회원 나이
-
+int nam;
     ProductClass[] shoppingBasket;          //물품을 저장할 바구니 배열생성
     int [] count = new int[10];      // 물건을 가져오는 값 타입이 int 이기 때문에 타입을 int 로 잡아줘야함
 
