@@ -46,6 +46,7 @@ public class ThreadFive {
             e.printStackTrace();
         }
         myclass.getCount();
+        System.out.println();
     }
 }
 
