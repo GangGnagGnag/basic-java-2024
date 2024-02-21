@@ -4,7 +4,7 @@
 3. 음악 플레이어의 상태를 확인할 수 있어야 한다.
  */
 
-package Music;
+package 객체지향.Music;
 
 public class Music {
     public static void main(String[] args) {

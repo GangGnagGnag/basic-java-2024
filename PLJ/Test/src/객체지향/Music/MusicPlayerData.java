@@ -3,7 +3,7 @@
 MusicPlayerData 라는 클래스를 만들고, 음악 플레이어에 사용되는 데이터
 들을 여기에 묶어서 멤버 변수로 사용하자.
  */
-package Music;
+package 객체지향.Music;
 
 public class MusicPlayerData {
 //    볼륨조절 , 음악플레이어 전원 클래스 생성

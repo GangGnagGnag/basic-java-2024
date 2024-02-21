@@ -1,4 +1,4 @@
-package Music;
+package 객체지향.Music;
 
 public class Music2 {
     public static void main(String[] args) {    //MusicPlayerData 클래스 사용
