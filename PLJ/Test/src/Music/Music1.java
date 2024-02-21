@@ -30,4 +30,3 @@ public class Music1 {
 //        음악 플레이어를 종료합니다
     }
 }
-
