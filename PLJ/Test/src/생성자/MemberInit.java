@@ -5,8 +5,7 @@ public class MemberInit {
     String name;
     int age;
     int grade;
-    
-    
+
     //  메서드 추가
     void initMember(String name, int age, int grade){
         this.name = name;
