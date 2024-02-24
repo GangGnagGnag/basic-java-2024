@@ -1,7 +1,7 @@
-package com.hellosop.order;
+package hellosop.order;
 
-import com.hellosop.product.Product;
-import com.hellosop.user.User;
+import hellosop.product.Product;
+import hellosop.user.User;
 
 public class OrderService {
 

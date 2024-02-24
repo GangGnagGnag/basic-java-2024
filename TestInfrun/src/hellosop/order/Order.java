@@ -1,9 +1,7 @@
-package com.hellosop.order;
+package hellosop.order;
 
-import com.hellosop.product.Product;
-import com.hellosop.user.User;
-
-import java.util.PrimitiveIterator;
+import hellosop.product.Product;
+import hellosop.user.User;
 
 public class Order {
     User user;

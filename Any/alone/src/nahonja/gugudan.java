@@ -1,3 +1,5 @@
+package nahonja;
+
 import java.util.Scanner;
 
 public class gugudan {
