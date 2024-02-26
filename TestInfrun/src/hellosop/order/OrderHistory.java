@@ -1,4 +1,4 @@
-package com.hellosop.order;
+package hellosop.order;
 
 public class OrderHistory {
 }

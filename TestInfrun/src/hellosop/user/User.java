@@ -1,4 +1,4 @@
-package com.hellosop.user;
+package hellosop.user;
 
 public class User {
     String name;

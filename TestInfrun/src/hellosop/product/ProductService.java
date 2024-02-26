@@ -1,4 +1,4 @@
-package com.hellosop.product;
+package hellosop.product;
 
 public class ProductService {
 
