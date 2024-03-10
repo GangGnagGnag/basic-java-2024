@@ -1,10 +1,12 @@
 package Product;
 
+import java.nio.file.FileAlreadyExistsException;
+
 public class Product {
-    int number;
-    String name;
-    int price;
-    int count;
+    int number;     //물품 번호
+    String name;    //물품 이름
+    int price;      //물품 가격
+    int count;      //물품 수량
 
 //  생성자를 만들어서
     Product(int number, String name, int price, int count){
