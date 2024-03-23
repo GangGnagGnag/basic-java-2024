@@ -27,7 +27,6 @@ public class Account {
     public void deposit(int amount) {
         if (amountBalance(amount)) {
             balance += amount;
-            System.out.println("---------------------------");
             System.out.println("계좌번호 : " + AcNum);
             System.out.println(amount + "원이 입급되었습니다");
             System.out.println("잔액 : " + balance);
