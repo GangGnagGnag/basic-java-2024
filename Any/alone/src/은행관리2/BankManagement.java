@@ -14,7 +14,7 @@ public class BankManagement {
     // 새로운 계좌를 등록하는 메서드
     public void addAccount(Account account) {
         accounts.put(account.getAcNum(), account);
-        System.out.println("계좌가 생성되었습니다: " + account.getAcNum());
+        System.out.println("계좌번호: " + account.getAcNum() + "번이 생성되었습니다");
     }
 
     // 계좌에 입금하는 메서드
