@@ -48,13 +48,21 @@ public class Main {
         }
     }
 
-    public static void cheakIn(){
+    public static void checkIn(){
 
         System.out.print("계좌번호 : ");
         String accountNum = sc.nextLine();
 
         System.out.print("입금액 : ");
         int amount = sc.nextInt();
+
+        int AN = makeAccouontNum(accountNum);
+        if(AN != -1){
+            accounts.get(AN).deposit(amount);
+        }
+        else {
+            System.out.println("계좌번호가 없습니다.");
+        }
     }
 
 }
