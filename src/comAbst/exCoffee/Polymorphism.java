@@ -4,29 +4,40 @@ class Coffee {
     int price;
     String name;
 
+    Coffee(int price){
+        this.price = price;
+    }
 }
 
 class Americano extends Coffee{
-    Americano() {
-        this.price = 5000;
-        this.name = "아메리카노";
+    Americano(){
+        super(5000);
+    }
+    @Override
+    public String toString(){
+        return "아메리카노";
     }
 }
 
 class Hazelnut extends Coffee{
     Hazelnut() {
-        this.price = 5500;
-        this.name = "헤이즐넛";
+      super(5500);
+    }
+    @Override
+    public String toString(){
+        return "헤이즐넛";
     }
 }
-class Cafelatte extends Coffee{
+class Cafelatte extends Coffee {
     Cafelatte() {
-        this.price = 7500;
-        this.name = "카페라떼";
+        super(7500);
+    }
+    @Override
+    public String toString(){
+        return "카페라떼는";
     }
 }
-
-class Customer extends Coffee {
+    class CustomerCoffee {
 
     int money = 300000;
 
@@ -36,13 +47,13 @@ class Customer extends Coffee {
             return;
         }
         money -= coffee.price;
-        System.out.printf("%s 를 구입 하셨습니다 \n" ,coffee.name );
+        System.out.printf("%s 를 구입 하셨습니다 \n" ,coffee);
     }
 }
 
 public class Polymorphism {
     public static void main(String[] args) {
-        Customer c = new Customer();
+        CustomerCoffee c = new CustomerCoffee();
         c.buyCoffee(new Americano());
         
         c.buyCoffee(new Hazelnut());

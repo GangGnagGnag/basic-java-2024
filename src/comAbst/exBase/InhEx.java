@@ -1,14 +1,17 @@
 package comAbst.exBase;
 
-class Base{
+class Base {
     int bNum;
+
+    Base(int bNum) {
+        this.bNum = bNum;
     }
+}
 
 class Drived extends Base {
     int dNum;
-
     Drived(int bNum, int dNum){
-        this.bNum = bNum;
+        super(bNum);    // 생성자
         this.dNum = dNum;
     }
 
