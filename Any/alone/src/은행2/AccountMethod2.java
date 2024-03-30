@@ -6,10 +6,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AccountMethod2 {
-    boolean run = false;
+    static boolean run = false;
     ArrayList<Account> accounts = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
-
 
     public void accountMethod() {
         int ch;
@@ -58,8 +57,9 @@ public class AccountMethod2 {
             System.out.println();
             System.out.println("사용하실 계좌번호를 입력하세요");
             System.out.print(">> ");
+            int an;
             if (sc.hasNextInt()) {
-                int an = sc.nextInt();
+                an = sc.nextInt();
                 sc.nextLine();
                 newAc.setAcNum(an);
             } else {
@@ -67,6 +67,21 @@ public class AccountMethod2 {
                 sc.next(); // 잘못된 입력을 버림
                 System.out.print("값을 다시 입력하세요 ");
                 continue;
+            }
+            // 같은 계좌번호가 있는지 확인
+            boolean checkAc = false;
+            for (Account account : accounts) {
+                if (account.getAcNum() == an) {
+                    checkAc = true;
+                    break;
+                }
+            }
+
+            if (checkAc) {
+                System.out.println("이미 있는 계좌번호입니다. 다른 번호를 입력하세요.");
+                continue;
+            } else {
+                newAc.setAcNum(an);
             }
 
             System.out.println("이름을 입력하세요.");
