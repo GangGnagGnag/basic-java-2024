@@ -81,15 +81,34 @@ public class AccountMethod {
         int length = accounts.size();
 
         for(int i = 0; i<length; i++){
-            String a = accounts.get(i).getAcNum();
-            String n = accounts.get(i).getName();
-            int b = accounts.get(i).getBalance();
+            String an = accounts.get(i).getAcNum();
+            String na = accounts.get(i).getName();
+            int ba = accounts.get(i).getBalance();
 
-            System.out.println("계좌번호 = " + a);
-            System.out.println("이름 = " + n);
-            System.out.println("잔액 = " + b);
+            System.out.println("계좌번호 = " + an);
+            System.out.println("이름 = " + na);
+            System.out.println("잔액 = " + ba);
             System.out.println();
         }
+    }
+
+    public void deposit(){
+        Account ac = new Account();
+        System.out.println("입금하실 계좌번호를 입력하세요");
+        System.out.print(">> ");
+        String dp = sc.nextLine();
+        for(Account a : accounts) {
+            if(a.getAcNum().equals()){
+                ac = a;            }
+
+        }
+
+
+
+
+        System.out.println("입금할 금액을 입력하세요");
+        System.out.print(">> ");
+
     }
 }
 
