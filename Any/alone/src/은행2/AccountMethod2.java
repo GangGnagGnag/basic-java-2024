@@ -1,24 +1,25 @@
 package 은행2;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AccountMethod {
+public class AccountMethod2 {
     boolean run = false;
     ArrayList<Account> accounts = new ArrayList<>();
-
     Scanner sc = new Scanner(System.in);
 
-    public void accountMethod() {
-        boolean run = true;
 
-        while (run) {
+    public void accountMethod() {
+        int ch;
+        while (true) {
             System.out.println("==============================================");
             System.out.println("1.계좌생성, 2.계좌목록, 3.입금, 4.출금, 5.종료");
             System.out.println("==============================================");
 
             System.out.print("번호를 입력하세요 : ");
-            int ch;
+
             if (sc.hasNextInt()) {
                 ch = sc.nextInt();
                 sc.nextLine();
@@ -50,11 +51,10 @@ public class AccountMethod {
         }
     }
 
-
     public void creatAccount() {
         Account newAc = new Account();
 
-        while (!run) {
+        while (true) {
             System.out.println();
             System.out.println("사용하실 계좌번호를 입력하세요");
             System.out.print(">> ");
@@ -98,10 +98,9 @@ public class AccountMethod {
             System.out.println();
             System.out.println(sn + "님의 계좌를 만들었습니다.");
             System.out.println("계좌번호는 " + newAc.getAcNum() + " 입니다");
+            break;
         }
     }
-
-
 
     public void accountList(){
         System.out.println();
@@ -133,12 +132,12 @@ public class AccountMethod {
                 return;
             }
         }
-            System.out.println("입금하실 금액을 입력하세요");
-            System.out.print(">> ");
-            if (sc.hasNextInt()){
+        System.out.println("입금하실 금액을 입력하세요");
+        System.out.print(">> ");
+        if (sc.hasNextInt()){
             int dp = sc.nextInt();
             sc.nextLine();
-            
+
 
             if (dp <= 0) {
                 System.out.println("0원은 입금이 불가능 합니다");
