@@ -69,10 +69,10 @@ public class AccountMethod2 {
                 continue;
             }
             // 같은 계좌번호가 있는지 확인
-            boolean checkAc = false;
+            boolean checkAc = false;        //  true 로 값을 변경하게 되면 계속 같은 부분이 반복되기 때문에 false 로 선언후
             for (Account account : accounts) {
                 if (account.getAcNum() == an) {
-                    checkAc = true;
+                    checkAc = true;         // 여기서 true 로 변경해줏기
                     break;
                 }
             }
@@ -117,7 +117,7 @@ public class AccountMethod2 {
         }
     }
 
-    public void accountList(){
+    public void accountList() {
         System.out.println();
         System.out.println("계좌목록");
 
@@ -135,55 +135,101 @@ public class AccountMethod2 {
 
     public void deposit() {
         Account ac = new Account();
-        System.out.println("입금하실 계좌번호를 입력하세요");
-        System.out.print(">> ");
-        int an = sc.nextInt();
-        for (Account a : accounts) {
-            if (a.getAcNum() == an) {
-                ac = a;
-                break;
+        while (true) {
+            System.out.println("입금하실 계좌번호를 입력하세요");
+            System.out.print(">> ");
+            int an;
+            if (sc.hasNextInt()) {
+                an = sc.nextInt();
+                sc.nextLine(); // 개행문자 제거
+
+                boolean found = false;
+                for (Account a : accounts) {
+                    if (a.getAcNum() == an) {
+                        ac = a;
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    System.out.println("입력하신 계좌번호에 해당하는 계좌가 없습니다");
+                    continue; // 다시 계좌번호 입력받기
+                }
             } else {
-                System.out.println("잘못 입력하였습니다");
-                return;
+                System.out.println("입력한 값을 확인하세요. 숫자가 아닌 값이 입력되었습니다.");
+                sc.next(); // 잘못된 입력을 버림
+                continue; // 다시 입력받기
             }
-        }
-        System.out.println("입금하실 금액을 입력하세요");
-        System.out.print(">> ");
-        if (sc.hasNextInt()){
-            int dp = sc.nextInt();
-            sc.nextLine();
 
+            System.out.println("입금하실 금액을 입력하세요");
+            System.out.print(">> ");
+            if (sc.hasNextInt()) {
+                int dp = sc.nextInt();
+                sc.nextLine(); // 개행문자 제거
 
-            if (dp <= 0) {
-                System.out.println("0원은 입금이 불가능 합니다");
+                if (dp <= 0) {
+                    System.out.println("0원은 입금이 불가능합니다");
+                    continue; // 다시 입력받기
+                } else {
+                    ac.addBalance(dp);
+                    System.out.println(dp + "원이 입금되었습니다");
+                    System.out.println("잔액 : " + ac.getBalance());
+                    break; // 올바른 입금 금액 입력 시 반복문 종료
+                }
             } else {
-                ac.addBalance(dp);
-                System.out.println(dp + "원이 입금되었습니다");
-                System.out.println("잔액 : " + ac.getBalance());
+                System.out.println("입력한 값을 확인하세요. 숫자가 아닌 값이 입력되었습니다.");
+                sc.next(); // 잘못된 입력을 버림
+                continue; // 다시 입력받기
             }
         }
     }
 
+
     public void withdraw() {
         Account ac = new Account();
-        System.out.println("출금하실 계좌번호를 입력하세요");
-        System.out.print(">> ");
-        int an = sc.nextInt();
-        for (Account a : accounts) {
-            if (a.getAcNum() == an) {
-                ac = a;
-                break;
+        int an;
+        int wd;
+
+        while (true) {
+            System.out.println("출금하실 계좌번호를 입력하세요");
+            System.out.print(">> ");
+            if (sc.hasNextInt()) {
+                an = sc.nextInt();
+                for (Account a : accounts) {
+                    if (a.getAcNum() == an) {
+                        ac = a;
+                        break;
+                    }
+                }
+                if (ac != null) {
+                    while (true) {
+                        System.out.println("출금하실 금액을 입력하세요");
+                        System.out.print(">> ");
+                        if (sc.hasNextInt()) {
+                            wd = sc.nextInt();
+                            if (wd <= 0) {
+                                System.out.println("0원 이하의 금액은 출금이 불가능합니다.");
+                            } else if (wd > ac.getBalance()) {
+                                System.out.println("잔액이 부족합니다.");
+                            } else {
+                                ac.subBalance(wd);
+                                System.out.println(wd + "원이 출금되었습니다");
+                                System.out.println("잔액 : " + ac.getBalance());
+                                return; // 출금이 성공했으므로 메서드 종료
+                            }
+                        } else {
+                            System.out.println("숫자를 입력하세요.");
+                            sc.next(); // 잘못된 입력을 제거하고 다음 입력을 받음
+                        }
+                    }
+                } else {
+                    System.out.println("잘못 입력하였습니다. 다시 입력하세요.");
+                }
             } else {
-                System.out.println("잘못 입력하였습니다");
-                return;
+                System.out.println("숫자를 입력하세요.");
+                sc.next(); // 잘못된 입력을 제거하고 다음 입력을 받음
             }
         }
-        System.out.println("출금하실 금액을 입력하세요");
-        System.out.print(">> ");
-        int wd = sc.nextInt();
-        ac.subBalance(wd);
-        System.out.println(wd + "원이 출금되었습니다");
-        System.out.println("잔액 : " + ac.getBalance());
-
     }
 }
