@@ -77,7 +77,6 @@ public class AccountMethod2 {
                     break;
                 }
             }
-
             if (checkAc) {
                 System.out.println("이미 있는 계좌번호입니다. 다른 번호를 입력하세요.");
                 continue;
@@ -187,7 +186,7 @@ public class AccountMethod2 {
     }
 
 
-    public void withdraw() {
+    public void withdraw() {    // while 문 2개로 묶음
         Account ac = new Account();
         int an;
         int wd;
@@ -217,11 +216,11 @@ public class AccountMethod2 {
                                 ac.subBalance(wd);
                                 System.out.println(wd + "원이 출금되었습니다");
                                 System.out.println("잔액 : " + ac.getBalance());
-                                return; // 출금이 성공했으므로 메서드 종료
+                                return; // 출금성공
                             }
                         } else {
                             System.out.println("숫자를 입력하세요.");
-                            sc.next(); // 잘못된 입력을 제거하고 다음 입력을 받음
+                            sc.next(); // 잘못된 입력을 제거후 다음 입력을 받음
                         }
                     }
                 } else {
@@ -229,7 +228,7 @@ public class AccountMethod2 {
                 }
             } else {
                 System.out.println("숫자를 입력하세요.");
-                sc.next(); // 잘못된 입력을 제거하고 다음 입력을 받음
+                sc.next(); // 잘못된 입력을 제거후 다음 입력을 받음
             }
         }
     }
