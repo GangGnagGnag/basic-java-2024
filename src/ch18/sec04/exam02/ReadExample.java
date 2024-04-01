@@ -1,6 +1,8 @@
 package ch18.sec04.exam02;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.Reader;
 
 public class ReadExample {
@@ -29,6 +31,11 @@ public class ReadExample {
                     System.out.println(data[i]);
                 }
             }
-        } reader.close();
-    } c
+            reader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 }
