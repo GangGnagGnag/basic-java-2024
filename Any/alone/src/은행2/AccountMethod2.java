@@ -11,8 +11,9 @@ public class AccountMethod2 {
     Scanner sc = new Scanner(System.in);
 
     public void accountMethod() {
+        boolean yes = true;
         int ch;
-        while (true) {
+        while (yes) {
             System.out.println("==============================================");
             System.out.println("1.계좌생성, 2.계좌목록, 3.입금, 4.출금, 5.종료");
             System.out.println("==============================================");
@@ -42,7 +43,7 @@ public class AccountMethod2 {
                     break;
                 case 5:
                     System.out.println("프로그램 종료");
-                    run = false; // 프로그램 종료
+                    yes = false; // 프로그램 종료
                     break;
                 default:
                     System.out.println("번호를 확인하세요.");
