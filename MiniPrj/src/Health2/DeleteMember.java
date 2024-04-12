@@ -1,8 +1,8 @@
 package Health2;
 
 public class DeleteMember extends ResChoice{
+    static boolean run = true;
     public static void deleteMember() {
-        boolean run = true;
         int choice;
         while (run) {
             System.out.println("\n회원을 삭제 하시겠습니까?");
@@ -38,7 +38,7 @@ public class DeleteMember extends ResChoice{
         System.out.print(">> ");
         String memberId = sc.nextLine();
 
-        while (true) {
+        while (run) {
             System.out.println("\n비밀번호를 입력하세요");
             System.out.print(">> ");
 
@@ -64,7 +64,7 @@ public class DeleteMember extends ResChoice{
                 break;
             }
 
-            while (true) {
+            while (run) {
                 System.out.println("\n회원을 삭제 하시겠습니까?");
                 System.out.println("  1.예  |  2.아니오 ");
                 System.out.print(">> ");
@@ -78,8 +78,10 @@ public class DeleteMember extends ResChoice{
                 }
                 if(ch == 1){
                     System.out.println("삭제됨");
+                    res.remove(re);
+                    run = false;
                 }
-            }
+            } run = false;
         }
     }
 }

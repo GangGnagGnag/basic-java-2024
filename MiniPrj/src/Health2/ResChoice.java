@@ -13,7 +13,7 @@ public class ResChoice {
 
         while (yes) {
             System.out.println("\n==========================================================");
-            System.out.println("1. 회원 등록 | 2. 회원 조회 | 3. PT연장 | 4. 회원 삭제 | 5. 종료 ");
+            System.out.println("1. 회원 등록 | 2. 전체 회원 조회 | 3. PT연장 | 4. 회원 삭제 | 5. 종료 ");
             System.out.println("==========================================================");
 
             System.out.print("번호를 입력하여 주세요 >> ");
@@ -33,7 +33,21 @@ public class ResChoice {
                     CreateMember.createMember();
                     break;
                 case 2:
-                    MemberList.memberList();
+                    System.out.println("1. 개별 회원 조회 | 2. 전체 회원 조회");
+                    int subChoice = sc.nextInt();
+                    sc.nextLine(); // 개행 문자 처리
+
+                    switch (subChoice) {
+                        case 1:
+                            MemberList.memberList();
+                            break;
+                        case 2:
+                            ShowAllMembers.showAllMembers();
+                            break;
+                        default:
+                            System.out.println("잘못된 입력입니다.");
+                            break;
+                    }
                     break;
                 case 3:
                     Extension.extension();
