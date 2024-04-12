@@ -28,15 +28,6 @@ public class look {
                 System.out.println(MemberId + "\t"+ MemberPw+ "\t" + MemberName+ "\t" + MemberBir +"\t"+ MemberTel +"\t" +MemberCount);
             }
 
-//            while(rs.next()){
-//                String MANGER_ID = rs.getString("MANAGER_ID");
-//                int MANAGER_PW = rs.getInt("MANAGER_PW");
-//                String MANAGER_NAME = rs.getString("MANAGER_NAME");
-//                int MANAGER_BIR = rs.getInt("MANAGER_BIR");
-//                int MANAGER_TEL = rs.getInt("MANAGER_TEL");
-//
-//                System.out.println(MANGER_ID + "\t" + MANAGER_PW+ "\t" + MANAGER_NAME + "\t"+ MANAGER_BIR + "\t" +MANAGER_TEL);
-//            }
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
