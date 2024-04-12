@@ -1,4 +1,4 @@
-package Health2.Health;
+package Health2;
 
 public class ResMain {
     public static void main(String[] args) {

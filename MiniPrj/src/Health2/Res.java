@@ -1,10 +1,12 @@
-package Health2.Health;
+package Health2;
 
 public class Res {
     private String MemberId;  // 회원 아이디
     private int MemberPw;
     private String MemberName;  // 회원이름
-    private int Count; // 남은
+    private int Count; // 남은PT수
+    private String ManagerId;
+    private int ManagerPw;
 
     public String getMemberId(){
         return MemberId;
@@ -15,6 +17,18 @@ public class Res {
     public String getMemberName(){
         return MemberName;
     }
+    public int getCount(){
+        return Count;
+    }
+    public String ManagerId(){
+        return ManagerId;
+    }
+    public void setManagerPw(int ManagerPw){
+        this.ManagerPw = ManagerPw;
+    }
+    public void setManagerId(String ManagerId) {
+        this.ManagerId = ManagerId;
+    }
     public void setMemberId(String MemberId){
         this.MemberId = MemberId;
     }
@@ -23,9 +37,6 @@ public class Res {
     }
     public void setMemberName(String MemberName){
         this.MemberName = MemberName;
-    }
-    public int getCount(){
-        return Count;
     }
     public void setCount(int Count){
         this.Count = Count;
