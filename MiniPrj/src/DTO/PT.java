@@ -1,6 +1,6 @@
-package Health2;
+package DTO;
 
-public class PT extends ResChoice{
+public class PT extends ResChoice {
     public static void pt(){
         boolean found = false; // 회원이름이 있는지 여부를 나타내는 변수
 

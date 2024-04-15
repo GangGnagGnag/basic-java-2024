@@ -1,4 +1,4 @@
-package Health2;
+package DTO;
 
 public class CreateMember extends ResChoice {
 
