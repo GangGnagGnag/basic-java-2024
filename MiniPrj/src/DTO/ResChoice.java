@@ -55,9 +55,10 @@ public class ResChoice {
 
                     switch (subChoice2) {
                         case 1:
+                            StudyPT.qwe();
                             break;
                         case 2:
-//                            PTStudy.ptstudy();
+//                            PTStudy.qwe()x;
                             break;
                         default:
                             System.out.println("잘못된 입력입니다.");
