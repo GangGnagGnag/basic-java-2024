@@ -8,7 +8,7 @@ public class insert extends ResChoice {
     }
 
     public static void insertClass() {
-        System.out.println("회원 아이디(전화번호)를 입력하세요");
+        System.out.println("전화번호를 입력하세요 ( - 포함!)");
         System.out.print(">> ");
         String memberID = sc.nextLine();
         System.out.println("비밀번호를 입력하세요 (ex 1234)");

@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ResChoice {
-    static ArrayList<Res> res = new ArrayList<>();
+    final public static String DB_URL           = "jdbc:oracle:thin:@localhost:1521:xe";
+    final public static String DB_DRIVER_NAME   = "oracle.jdbc.driver.OracleDriver";
+    final public static String DB_USER          = "ADER";
+    final public static String DB_PW            = "1234";
     static Scanner sc = new Scanner(System.in);
 
     public void resChoice() {
@@ -12,9 +15,9 @@ public class ResChoice {
         int choice;
 
         while (yes) {
-            System.out.println("\n===============================================================");
+            System.out.println("\n=========================================================================");
             System.out.println("1. 회원 등록 | 2. 전체 회원 조회 | 3. PT연장 | 4. 회원 삭제 | 5.수업 | 6. 종료 ");
-            System.out.println("===============================================================");
+            System.out.println("=========================================================================");
 
             System.out.print("번호를 입력하여 주세요 >> ");
 
@@ -38,7 +41,7 @@ public class ResChoice {
                     break;
 
                 case 3:
-                    Extension.extension();
+                    Extention.extention();
                     break;
 
                 case 4:
@@ -52,10 +55,9 @@ public class ResChoice {
 
                     switch (subChoice2) {
                         case 1:
-                            PT.pt();
                             break;
                         case 2:
-                            PTStudy.ptstudy();
+//                            PTStudy.ptstudy();
                             break;
                         default:
                             System.out.println("잘못된 입력입니다.");
