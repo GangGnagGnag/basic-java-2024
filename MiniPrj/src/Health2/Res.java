@@ -7,7 +7,14 @@ public class Res {
     private int Count; // 남은PT수
     private String ManagerId;
     private int ManagerPw;
+    private String PTStudy;
 
+    public String getPTStudy(){
+        return PTStudy;
+    }
+    public void setPTStudy(String PTStudy){
+        this.PTStudy = PTStudy;
+    }
     public String getMemberId(){
         return MemberId;
     }

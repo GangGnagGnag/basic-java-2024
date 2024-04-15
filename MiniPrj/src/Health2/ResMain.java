@@ -3,7 +3,7 @@ package Health2;
 import java.util.Scanner;
 
 public class ResMain {
-    static final String MANAGER_USERNAME = "ADER";
+    static final String MANAGER_USERNAME = "1234";
     static final int MANAGER_PASSWORD = 1234; // int 타입의 비밀번호
     static Scanner sc = new Scanner(System.in);
 
