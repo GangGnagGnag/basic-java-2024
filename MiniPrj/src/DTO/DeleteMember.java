@@ -6,10 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DeleteMember extends ResChoice {
-    public static void main(String[] args) {
-        deleteMember();
-    }
-
     public static void deleteMember() {
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PW)) {
             // 사용자로부터 아이디 입력 받기

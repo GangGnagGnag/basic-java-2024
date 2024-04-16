@@ -49,19 +49,23 @@ public class ResChoice {
                     break;
 
                 case 5:
-                    System.out.println("1. 수업 등록 | 2. 수업 조회");
-                    int subChoice2 = sc.nextInt();
+                    System.out.println("1. 수업 등록 | 2. 수업 조회 | 3. 뒤로가기");
+                    System.out.print(">> ");
+                    int subChoice = sc.nextInt();
                     sc.nextLine(); // 개행 문자 처리
 
-                    switch (subChoice2) {
+                    switch (subChoice) {
                         case 1:
-                            StudyPT.qwe();
+                            RegisterExercise.registerExercise();
                             break;
                         case 2:
-//                            PTStudy.qwe()x;
+                            PTStudy.studyList();
+                            break;
+                        case 3:
+                            System.out.println("선택 창으로 돌아갑니다.");
                             break;
                         default:
-                            System.out.println("잘못된 입력입니다.");
+                            System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
                             break;
                     }
                     break; // 전의 코드에서 break; << 이 줄 없었기에 몇 번을 클릭하든 case 6이 실행되는 문제가 있었습니다.

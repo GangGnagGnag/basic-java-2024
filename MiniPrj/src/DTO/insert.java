@@ -3,10 +3,6 @@ package DTO;
 import java.sql.*;
 
 public class insert extends ResChoice {
-    public static void main(String[] args) {
-        insertClass();
-    }
-
     public static void insertClass() {
         System.out.println("전화번호를 입력하세요 ( - 포함!)");
         System.out.print(">> ");

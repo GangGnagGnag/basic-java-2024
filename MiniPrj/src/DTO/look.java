@@ -3,10 +3,6 @@ package DTO;
 import java.sql.*;
 
 public class look extends ResChoice {
-
-    public static void main(String[] args) {
-        lookClass();
-    }
     public static void lookClass() {
         Connection conn = null;
         try {
@@ -24,9 +20,9 @@ public class look extends ResChoice {
                 int MemberCount = rs.getInt("MEMBERCOUNT");
 
                 System.out.println("\n=================회원 조회=================");
-                System.out.println("이름: " + MemberId);
+                System.out.println("이름: " + MemberName);
                 System.out.println("비밀번호: " + MemberPw);
-                System.out.println("회원번호: " + MemberName);
+                System.out.println("회원번호: " + MemberId);
                 System.out.println("남은 PT 횟수: " + MemberCount);
                 System.out.println("==========================================");
             }
