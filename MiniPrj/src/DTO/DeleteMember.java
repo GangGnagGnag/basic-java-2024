@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.InputMismatchException;
 
 public class DeleteMember extends ResChoice {
     public static void deleteMember() {
@@ -11,14 +12,24 @@ public class DeleteMember extends ResChoice {
             // 사용자로부터 아이디 입력 받기
             System.out.print("회원 아이디를 입력하세요: ");
             String memberId = sc.nextLine();
-            System.out.print("비밀번호를 입력하세요 : ");
-            String memberPw = sc.nextLine();
+
+            int memberPw = 0; 
+            while(true){
+                try{
+                    System.out.print("비밀번호를 입력하세요 : ");
+                    memberPw = sc.nextInt();
+                    break;
+                } catch (InputMismatchException e ){
+                    System.out.println("잘못된 입력입니다.");
+                    sc.nextLine();
+                }
+            }
 
             // 회원 삭제 SQL 쿼리
             String deleteMemberSql = "DELETE FROM MEMBER WHERE MEMBERID = ? AND MEMBERPW = ?";
             try (PreparedStatement pstmt = conn.prepareStatement(deleteMemberSql)) {
                 pstmt.setString(1, memberId);
-                pstmt.setString(2, memberPw);
+                pstmt.setInt(2, memberPw);
 
                 int rowsAffected = pstmt.executeUpdate();
 

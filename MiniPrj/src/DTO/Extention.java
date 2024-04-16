@@ -1,6 +1,7 @@
 package DTO;
 
 import java.sql.*;
+import java.util.InputMismatchException;
 
 public class Extention extends ResChoice {
     public static void extention(){
@@ -8,9 +9,20 @@ public class Extention extends ResChoice {
             // 사용자로부터 아이디 입력 받기
             System.out.print("회원 아이디를 입력하세요: ");
             String memberId = sc.nextLine();
-            System.out.print("등록 횟수 : ");
-            int increaseCount = sc.nextInt();
-            sc.nextLine();
+
+            int increaseCount = 0;
+            while(true){
+                try{
+                    System.out.print("등록 횟수 : ");
+                    increaseCount = sc.nextInt();
+                    sc.nextLine();
+                    break;
+                } catch (InputMismatchException e ){
+                    System.out.println("잘못 입력하셨습니다.");
+                    sc.nextLine();
+                }
+            }
+
 
             String sql = "UPDATE MEMBER SET MEMBERCOUNT = MEMBERCOUNT + ? WHERE MEMBERID = ?";
             try(PreparedStatement pstmt = conn.prepareStatement(sql)){

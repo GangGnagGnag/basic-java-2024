@@ -1,14 +1,13 @@
 package DTO;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ResChoice {
     final public static String DB_URL           = "jdbc:oracle:thin:@localhost:1521:xe";
     final public static String DB_DRIVER_NAME   = "oracle.jdbc.driver.OracleDriver";
-    final public static String DB_USER          = "ADER";
-    final public static String DB_PW            = "1234";
-    static Scanner sc = new Scanner(System.in);
+    final public static String DB_USER          = "ADER";   // 오라클 아이디
+    final public static String DB_PW            = "1234";   // 오라클 비번
+    static Scanner sc = new Scanner(System.in);   // static 을 사용해서 정적으로 선언
 
     public void resChoice() {
         boolean yes = true;
@@ -68,11 +67,11 @@ public class ResChoice {
                             System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
                             break;
                     }
-                    break; // 전의 코드에서 break; << 이 줄 없었기에 몇 번을 클릭하든 case 6이 실행되는 문제가 있었습니다.
+                    break;
                 case 6:
                     System.out.println("종료합니다");
                     yes = false;
-                    break; // 선택 5일 때 종료// 선택 5일 때 종료
+                    break;
 
                 default:
                     System.out.println("잘못된 입력 입니다.");
