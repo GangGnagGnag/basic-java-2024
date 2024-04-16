@@ -10,7 +10,7 @@ public class PTStudy extends ResChoice {
         String memberId = sc.nextLine(); // 사용자로부터 회원 아이디 입력 받음
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PW)) {
-            String sql = "SELECT EXERCISE, KG, SETTING FROM PT WHERE MEMBERID = ?";
+            String sql = "SELECT EXERCISE, DATEDAY, KG, SETTING FROM PT WHERE MEMBERID = ?";
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 pstmt.setString(1, memberId);
                 ResultSet rs = pstmt.executeQuery();
@@ -18,13 +18,17 @@ public class PTStudy extends ResChoice {
                 if (!rs.isBeforeFirst()) {
                     System.out.println("운동 기록이 없습니다.");
                 } else {
-                    System.out.println("\n===============운동 기록===============");
+                    System.out.println("\n=================================운동 기록================================");
                     while (rs.next()) {
+                        String dateday = rs.getString("DATEDAY");
                         String exercise = rs.getString("EXERCISE");
                         String kg = rs.getString("KG");
                         String setting = rs.getString("SETTING");
-                        System.out.println("운동: "+ exercise + "\t무게: " + kg +  "kg \t세트: " + setting + "set");
+                        System.out.println("날짜: " + dateday + " \t | \t 운동: "+ exercise + " \t | \t 무게: " + kg +
+                                "kg \t | \t 세트: " + setting + "set");
                     }
+                    System.out.println("=======================================================================");
+
                 }
             }
         } catch (SQLException e) {
