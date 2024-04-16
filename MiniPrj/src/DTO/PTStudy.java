@@ -23,7 +23,7 @@ public class PTStudy extends ResChoice {
                         String exercise = rs.getString("EXERCISE");
                         String kg = rs.getString("KG");
                         String setting = rs.getString("SETTING");
-                        System.out.println("운동 : "+ exercise + "\t무게 : " + kg +  "kg \t세트 : " + setting + "set");
+                        System.out.println("운동: "+ exercise + "\t무게: " + kg +  "kg \t세트: " + setting + "set");
                     }
                 }
             }
