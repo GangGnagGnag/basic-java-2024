@@ -15,11 +15,11 @@ public class Insert extends ResChoice {
                 System.out.println("비밀번호를 입력하세요 (ex 1234)");
                 System.out.print(">> ");
                 memberPW = sc.nextInt();
-                sc.nextLine(); // 버퍼 비우기
+                sc.nextLine();
                 break; // 올바른 입력을 받았으므로 루프 종료
             } catch (InputMismatchException e) {
                 System.out.println("올바른 숫자를 입력하세요.");
-                sc.nextLine(); // 잘못된 입력을 버리고 버퍼 비우기
+                sc.nextLine(); // 잘못된 입력을 버리기
             }
         }
 
@@ -27,7 +27,7 @@ public class Insert extends ResChoice {
         System.out.print(">> ");
         String memberName = sc.nextLine();
 
-        int increaseCount = 0;
+        int increaseCount = 0; // increaseCount 초기화
         while(true){
             try{
                 System.out.print("등록 횟수 : ");

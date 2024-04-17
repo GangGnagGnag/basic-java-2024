@@ -18,10 +18,10 @@ public class ResMain {
 
             if (sc.hasNextInt()) {
                 password = sc.nextInt();
-                sc.nextLine(); // 버퍼 비우기
+                sc.nextLine();
             } else {
                 System.out.println("아이디 또는 비밀번호가 일치하지 않습니다. 다시 시도해주세요.");
-                sc.nextLine(); // 버퍼 비우기
+                sc.nextLine();
                 continue;
             }
 
