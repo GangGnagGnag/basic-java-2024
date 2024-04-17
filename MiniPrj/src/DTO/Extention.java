@@ -28,7 +28,11 @@ public class Extention extends ResChoice {
                     System.out.print("등록 횟수 : ");
                     increaseCount = sc.nextInt();
                     sc.nextLine();
-                    break;
+                    if (increaseCount <= 0) {
+                        System.out.println("0 이하의 값을 입력할 수 없습니다. 다시 입력하세요.");
+                    } else {
+                        break;
+                    }
                 } catch (InputMismatchException e ){
                     System.out.println("잘못 입력하셨습니다.");
                     sc.nextLine();

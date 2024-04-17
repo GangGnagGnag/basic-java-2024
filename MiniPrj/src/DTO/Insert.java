@@ -27,16 +27,19 @@ public class Insert extends ResChoice {
         System.out.print(">> ");
         String memberName = sc.nextLine();
 
-        int ptCount = 0;
-        while (true) {
-            try {
-                System.out.println("PT 횟수를 입력하세요");
-                System.out.print(">> ");
-                ptCount = sc.nextInt();
+        int increaseCount = 0;
+        while(true){
+            try{
+                System.out.print("등록 횟수 : ");
+                increaseCount = sc.nextInt();
                 sc.nextLine();
-                break;
-            } catch (InputMismatchException e) {
-                System.out.println("값을 다시 입력하세요");
+                if (increaseCount <= 0) {
+                    System.out.println("0 이하의 값을 입력할 수 없습니다. 다시 입력하세요.");
+                } else {
+                    break;
+                }
+            } catch (InputMismatchException e ){
+                System.out.println("잘못 입력하셨습니다.");
                 sc.nextLine();
             }
         }
@@ -63,13 +66,13 @@ public class Insert extends ResChoice {
             pstm.setString(1, memberID);
             pstm.setInt(2, memberPW);
             pstm.setString(3, memberName);
-            pstm.setInt(4, ptCount);
+            pstm.setInt(4, increaseCount);
 
             int res = pstm.executeUpdate();
             if (res > 0) {
-                System.out.println("입력성공");
+                System.out.println("회원 등록이 완료 되었습니다");
             } else {
-                System.out.println("입력실패");
+                System.out.println("잘못된 입력입니다. 다시 시도해 주세요.");
             }
         } catch (SQLException e) {
             e.printStackTrace();
