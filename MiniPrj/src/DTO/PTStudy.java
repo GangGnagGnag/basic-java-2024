@@ -25,7 +25,7 @@ public class PTStudy extends ResChoice {
                         String kg = rs.getString("KG");
                         String setting = rs.getString("SETTING");
                         System.out.println("날짜: " + dateday + " \t | \t 운동: "+ exercise + " \t | \t 무게: " + kg +
-                                "kg \t | \t 세트: " + setting + "set");
+                                "kg \t |   \t 세트: " + setting + "set");
                     }
                     System.out.println("===========================================================================");
 
