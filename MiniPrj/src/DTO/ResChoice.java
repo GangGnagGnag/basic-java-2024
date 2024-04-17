@@ -32,7 +32,7 @@ public class ResChoice {
 
             switch (choice) {
                 case 1:
-                    insert.insertClass();
+                    Insert.insertClass();
                     break;
 
                 case 2:

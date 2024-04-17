@@ -3,7 +3,7 @@ package DTO;
 import java.sql.*;
 import java.util.InputMismatchException;
 
-public class insert extends ResChoice {
+public class Insert extends ResChoice {
     public static void insertClass() {
         System.out.println("전화번호를 입력하세요 ( - 포함!)");
         System.out.print(">> ");
@@ -28,14 +28,14 @@ public class insert extends ResChoice {
         String memberName = sc.nextLine();
 
         int ptCount = 0;
-        while(true) {
+        while (true) {
             try {
                 System.out.println("PT 횟수를 입력하세요");
                 System.out.print(">> ");
                 ptCount = sc.nextInt();
                 sc.nextLine();
                 break;
-            } catch (InputMismatchException e){
+            } catch (InputMismatchException e) {
                 System.out.println("값을 다시 입력하세요");
                 sc.nextLine();
             }
@@ -58,7 +58,7 @@ public class insert extends ResChoice {
         String sql = "INSERT INTO MEMBER (MEMBERID, MEMBERPW, MEMBERNAME, MEMBERCOUNT) VALUES (?,?,?,?)";
         PreparedStatement pstm = null;
 
-        try{
+        try {
             pstm = conn.prepareStatement(sql);
             pstm.setString(1, memberID);
             pstm.setInt(2, memberPW);
@@ -66,7 +66,7 @@ public class insert extends ResChoice {
             pstm.setInt(4, ptCount);
 
             int res = pstm.executeUpdate();
-            if(res > 0){
+            if (res > 0) {
                 System.out.println("입력성공");
             } else {
                 System.out.println("입력실패");
