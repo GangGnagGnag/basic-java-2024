@@ -6,13 +6,15 @@ import java.util.InputMismatchException;
 public class RegisterExercise extends ResChoice {
     public static void registerExercise() {
 
-        System.out.print("회원 전화번호를 입력하세요: ");
+        System.out.println("회원 전화번호를 입력하세요");
+        System.out.print(">> ");
         String memberId = sc.nextLine();
 
         int dateday = 0;
         while(true){
             try{
-                System.out.print("날짜를 입력하세요(YYMMDD): ");
+                System.out.println("날짜를 입력하세요(YYMMDD)");
+                System.out.print(">> ");
                 dateday = sc.nextInt();
                 sc.nextLine();
                 break;
@@ -26,7 +28,8 @@ public class RegisterExercise extends ResChoice {
             boolean continueRecording = true;
             while (continueRecording) {
                 System.out.println("운동을 등록합니다. 종료하려면 'exit'을 입력하세요.");
-                System.out.print("운동을 입력하세요 : ");
+                System.out.println("운동을 입력하세요");
+                System.out.print(">> ");
                 String exercise = sc.nextLine();
 
                 if (exercise.equalsIgnoreCase("exit")) {
@@ -36,7 +39,8 @@ public class RegisterExercise extends ResChoice {
                     int kg = 0;
                     while(true){
                         try{
-                            System.out.print("무게를 입력하세요: ");
+                            System.out.println("무게를 입력하세요");
+                            System.out.print(">> ");
                             kg = sc.nextInt();
                             sc.nextLine();
                             break;
@@ -49,7 +53,8 @@ public class RegisterExercise extends ResChoice {
                     int setting = 0;
                     while(true){
                         try{
-                            System.out.print("세트수를 입력하세요: ");
+                            System.out.println("세트수를 입력하세요");
+                            System.out.print(">> ");
                             setting = sc.nextInt();
                             sc.nextLine();
                             break;

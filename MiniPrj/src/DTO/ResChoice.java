@@ -18,7 +18,7 @@ public class ResChoice {
             System.out.println("1. 회원 등록 | 2. 전체 회원 조회 | 3. PT연장 | 4. 회원 삭제 | 5.수업 | 6. 종료 ");
             System.out.println("=========================================================================");
 
-            System.out.print("번호를 입력하여 주세요 >> ");
+            System.out.print("선택하실 메뉴 번호를 입력하여 주세요 : ");
 
             if (sc.hasNextInt()) {
                 choice = sc.nextInt();
@@ -48,7 +48,7 @@ public class ResChoice {
                     break;
 
                 case 5:
-                    System.out.println("1. 수업 등록 | 2. 수업 조회 | 3. 뒤로가기");
+                    System.out.println("1. 수업 등록 | 2. 수업 조회 ");
                     System.out.print(">> ");
                     int subChoice = sc.nextInt();
                     sc.nextLine(); // 개행 문자 처리
@@ -60,16 +60,13 @@ public class ResChoice {
                         case 2:
                             PTStudy.studyList();
                             break;
-                        case 3:
-                            System.out.println("선택 창으로 돌아갑니다.");
-                            break;
                         default:
                             System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
                             break;
                     }
                     break;
                 case 6:
-                    System.out.println("종료합니다");
+                    System.out.println("프로그램을 종료합니다");
                     yes = false;
                     break;
 

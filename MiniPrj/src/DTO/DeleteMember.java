@@ -10,13 +10,15 @@ public class DeleteMember extends ResChoice {
     public static void deleteMember() {
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PW)) {
             // 사용자로부터 아이디 입력 받기
-            System.out.print("회원 아이디를 입력하세요: ");
+            System.out.println("회원 아이디를 입력하세요");
+            System.out.print(">> ");
             String memberId = sc.nextLine();
 
             int memberPw = 0; 
             while(true){
                 try{
-                    System.out.print("비밀번호를 입력하세요 : ");
+                    System.out.println("비밀번호를 입력하세요");
+                    System.out.print(">> ");
                     memberPw = sc.nextInt();
                     break;
                 } catch (InputMismatchException e ){

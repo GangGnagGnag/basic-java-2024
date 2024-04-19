@@ -8,7 +8,7 @@ public class ResMain {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("=== 매니저 로그인 ===");
+        System.out.println("====== 매니저 로그인 ======");
 
         while (true) {
             System.out.print("아이디를 입력하세요: ");

@@ -6,7 +6,8 @@ import java.sql.*;
 public class PTStudy extends ResChoice {
 
     public static void studyList() {
-        System.out.print("회원 아이디를 입력하세요: ");
+        System.out.println("회원 아이디를 입력하세요");
+        System.out.print(">> ");
         String memberId = sc.nextLine(); // 사용자로부터 회원 아이디 입력 받음
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PW)) {

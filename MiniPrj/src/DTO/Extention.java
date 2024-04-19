@@ -13,7 +13,8 @@ public class Extention extends ResChoice {
             int memberPw = 0;
             while(true){
                 try{
-                    System.out.print("비밀번호를 입력하세요 : ");
+                    System.out.println("비밀번호를 입력하세요");
+                    System.out.print(">> ");
                     memberPw = sc.nextInt();
                     break;
                 } catch (InputMismatchException e ){
@@ -25,7 +26,8 @@ public class Extention extends ResChoice {
             int increaseCount = 0;
             while(true){
                 try{
-                    System.out.print("등록 횟수 : ");
+                    System.out.println("연장하고자 하는 횟수를 입력하세요");
+                    System.out.print(">> ");
                     increaseCount = sc.nextInt();
                     sc.nextLine();
                     if (increaseCount <= 0) {
@@ -49,7 +51,7 @@ public class Extention extends ResChoice {
                 int rowsAffected = pstmt.executeUpdate();
 
                 if(rowsAffected > 0){
-                    System.out.println("회원의 PT 횟수가 증가했습니다.");
+                    System.out.println("회원님의 PT " + increaseCount  +"회 연장되었습니다.");
                 } else{
                     System.out.println("해당 회원이 존재하지 않거나 비밀번호가 일치하지 않습니다.");
                 }

@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 
 public class Insert extends ResChoice {
     public static void insertClass() {
-        System.out.println("전화번호를 입력하세요 ( - 포함!)");
+        System.out.println("전화번호를 입력하세요 ( - 포함)");
         System.out.print(">> ");
         String memberID = sc.nextLine();
 
@@ -30,7 +30,8 @@ public class Insert extends ResChoice {
         int increaseCount = 0; // increaseCount 초기화
         while(true){
             try{
-                System.out.print("등록 횟수 : ");
+                System.out.println("등록 횟수를 입력하세요");
+                System.out.print(">> ");
                 increaseCount = sc.nextInt();
                 sc.nextLine();
                 if (increaseCount <= 0) {
